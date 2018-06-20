@@ -13,8 +13,11 @@
   My Heroes
 </h2>
 <ul class="heroes">
-  <li *ngFor="let who of heroes" (click)="onSelect(who)">
+  <li *ngFor="let who of heroes"
+  [class.selected]="hero === selectedHero"
+  (click)="onSelect(who)">
     <span class="badge">{{who.id}}</span> {{who.name}}
   </li>
 </ul>
 
+<app-hero-detail [hero]="selectedHero"></app-hero-detail>
