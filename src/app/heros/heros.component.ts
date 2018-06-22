@@ -15,7 +15,7 @@ export class HerosComponent implements OnInit {
     name: 'windstrom'
   };
 
-  heroes = Hero[];
+  heroes: Hero[];
 
   selectedHero: Hero;
 
@@ -30,7 +30,7 @@ export class HerosComponent implements OnInit {
   }
 
   getHeroes(): void {
-    this.heroes = this.heroService.getHeroes();
+    this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
   }
 
 
